@@ -2,7 +2,7 @@
 
 var c = document.getElementById('canvas')
 var s = sprinkler.create(c) 
-function rainingTea(message) {
+function fallingCrossing(message) {
     
     var images = [
         'tom-nook.png',
@@ -26,17 +26,18 @@ function rainingTea(message) {
 
 
 ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
-    if( command === "teaparty" &&
+    if( command === "animalcrossing" &&
         ( !rewardId || flags.broadcaster || flags.mod ) ) {
-        rainingTea( message );
+        fallingCrossing( message );
     }
     if( flags.customReward && extra.customRewardId === rewardId ) {
-        rainingTea( message );
+        fallingCrossing( message );
     }
 };
 ComfyJS.onChat = ( user, message, flags, self, extra ) => {
-    if( flags.customReward && extra.customRewardId === "f1d2db18-77eb-4f0c-a0d7-5790cc735f01" ) {
-        rainingTea( message );
+    if( flags.customReward )
+        if ( extra.customRewardId === rewardId ) {
+        fallingCrossing( message );
     }
 };
-ComfyJS.Init( "shadesofpixie" );
+ComfyJS.Init( "channel" );

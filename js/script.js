@@ -25,7 +25,7 @@ function fallingCrossing(message) {
 }
 
 
-
+fallingCrossing();
 
 ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
     if( command === "animalcrossing" &&

@@ -1,15 +1,17 @@
 
-
-var c = document.getElementById('canvas')
-var s = sprinkler.create(c) 
+const params = new URLSearchParams( location.search );
+const channel = params.get( "channel" ) || "";
+const rewardId = params.get( "reward" ) || "";
+let c = document.getElementById('canvas')
+let s = sprinkler.create(c) 
 function fallingCrossing(message) {
     
-    var images = [
+    let images = [
         'tom-nook.png',
         'peach.png',
         'isabelle.png'
       ]
-      var stop = s.start(images, {
+      let stop = s.start(images, {
         imagesInSecond: 8,
         ddyMin: 200,
         ddyMax: 200,

@@ -6,7 +6,21 @@ let c = document.getElementById('canvas')
 let s = sprinkler.create(c) 
 function fallingCrossing(message) {
     
-  
+    let images = [
+        'tom-nook.png',
+        'peach.png',
+        'isabelle.png'
+      ]
+      let stop = s.start(images, {
+        imagesInSecond: 8,
+        ddyMin: 200,
+        ddyMax: 200,
+
+      })
+
+      setTimeout(function(){
+        stop();
+      }, 5000) 
 
 }
 
